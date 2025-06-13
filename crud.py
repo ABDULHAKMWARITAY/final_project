@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 import model, schemas
 
 
-# Generic CRUD Template
+# Generic CRUD 
 
 def create_entity(db: Session, entity_model, entity_schema):
     db_entity = entity_model(**entity_schema.dict())
@@ -39,7 +39,7 @@ def delete_entity(db: Session, entity_model, entity_id: int):
     return db_entity
 
 
-# Specific shortcuts (optional)
+# shortcuts
 def create_play(db: Session, play: schemas.PlayCreate):
     return create_entity(db, model.Play, play)
 
